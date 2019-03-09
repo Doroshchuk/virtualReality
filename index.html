@@ -142,7 +142,7 @@
     mesh.position.y	= geometry.parameters.height/2
     arWorldRoot.add( mesh );
 
-    var geometry	= new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+    var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 100, 100 );
     var material	= new THREE.MeshNormalMaterial();
     var mesh	= new THREE.Mesh( geometry, material );
     mesh.position.y	= 0.5
@@ -177,4 +177,19 @@
             onRenderFct(deltaMsec/1000, nowMsec/1000)
         })
     })
+
+    function sievertsDrawing(u, v) {
+        var c = 5;
+        u = u * Math.PI / 2;
+        v = v * Math.PI * 0.95;
+        var phi = -(u / Math.sqrt(c + 1)) + Math.atan(Math.sqrt(c + 1) * Math.tan(u));
+        var a_ = 2 / (c + 1 - c * Math.pow(Math.sin(v), 2) * Math.pow(Math.cos(u), 2));
+        var r = a_ / Math.sqrt(c) * Math.sqrt((c + 1) * (1 + c * Math.pow(Math.sin(u), 2))) * Math.sin(v);
+
+        var x = r * Math.cos(phi);
+        var y = r * Math.sin(phi);
+        var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
+        const scale = 100;
+        return new THREE.Vector3(x * scale, y * scale, z * scale);
+    }
 </script></body>
