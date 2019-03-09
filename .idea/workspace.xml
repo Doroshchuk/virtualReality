@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70360150-4e4a-4fa4-97cc-8d86c2425698" name="Default Changelist" comment="" />
+    <list default="true" id="70360150-4e4a-4fa4-97cc-8d86c2425698" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/POST.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/Hiro pattern with border.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/camera_para.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/multi-marker-deleteme.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/multi-marker-hirokanji.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/patt.hiro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data/patt.kanji" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dataNFT/pinball.fset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dataNFT/pinball.fset3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dataNFT/pinball.iset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/25P1geh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/HIRO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/armchair.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/chalk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/chalk_multi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/hiro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/kuva.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/marker_cube_hamming63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/multi-pattern-template-abcdgf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/multimarker.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/pinball.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/qrcode-in-marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-alone-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-alone-64x64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-black-transparent-1280x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-black-transparent-20480x8192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-black-transparent-512x204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/logo-white-transparent8-20480x8912.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/originals/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/originals/logo-black-transparent-20480x8192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/logo/originals/logo-white-transparent8-20480x8912.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/marker-generator/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/marker-generator/MGO2.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/marker-generator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/marker-small.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/marker.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-abcdef/patt.g" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-barcode-4x3.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/multimarkers/multi-marker-hirokanji.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/videos/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/videos/VID_20160503_165602.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/videos/headtracking.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/videos/output_4.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,21 +74,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="3" />
+          <entry key="hiro" value="1" />
+          <entry key="html" value="2" />
+          <entry key="js" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="3" />
+          <entry key="HTML" value="2" />
+          <entry key="JavaScript" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -41,7 +99,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/three.js/examples/mobile-performance.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="69" lean-forward="true" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,6 +132,7 @@
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -85,7 +156,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552131515663" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552133876347" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -120,12 +191,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552131123824</updated>
-      <workItem from="1552131128451" duration="283000" />
+      <workItem from="1552131128451" duration="1868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283000" />
+    <option name="totallyTimeSpent" value="1868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -139,7 +210,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -179,6 +250,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three.js/build/ar.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data/patt.hiro">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three.js/examples/mobile-performance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="69" lean-forward="true" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
         </state>
       </provider>
     </entry>
