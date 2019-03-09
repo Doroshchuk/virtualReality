@@ -142,7 +142,7 @@
     mesh.position.y	= geometry.parameters.height/2
     arWorldRoot.add( mesh );
 
-    var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 64, 16 );
+    var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 44, 16 );
     var material	= new THREE.MeshNormalMaterial();
     var mesh	= new THREE.Mesh( geometry, material );
     mesh.position.y	= 0.5
@@ -189,7 +189,7 @@
         var x = r * Math.cos(phi);
         var y = r * Math.sin(phi);
         var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-        const scale = 0.5;
+        const scale = 1;
         return new THREE.Vector3(x * scale, y * scale, z * scale);
     }
 </script></body>
