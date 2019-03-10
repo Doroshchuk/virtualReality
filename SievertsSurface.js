@@ -115,24 +115,24 @@ onRenderFcts.push(function(delta){
 //		add an object in the scene
 //////////////////////////////////////////////////////////////////////////////////
 
-var arWorldRoot = smoothedRoot
+var arWorldRoot = smoothedRoot;
 
-// add a torus knot
-var geometry	= new THREE.CubeGeometry(1,1,1);
-var material	= new THREE.MeshNormalMaterial({
-    transparent : true,
-    opacity: 0.5,
-    side: THREE.DoubleSide
-});
-var mesh	= new THREE.Mesh( geometry, material );
-mesh.position.y	= geometry.parameters.height/2
-arWorldRoot.add( mesh );
+// // add a torus knot
+// var geometry	= new THREE.CubeGeometry(1,1,1);
+// var material	= new THREE.MeshNormalMaterial({
+//     transparent : true,
+//     opacity: 0.5,
+//     side: THREE.DoubleSide
+// });
+// var mesh	= new THREE.Mesh( geometry, material );
+// mesh.position.y	= geometry.parameters.height/2;
+// arWorldRoot.add( mesh );
 
 var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 40, 40 );
 var material	= new THREE.MeshNormalMaterial();
 var mesh	= new THREE.Mesh( geometry, material );
 mesh.position.y	= 0.5;
-mesh.position.y	= 3;
+// mesh.position.x	= 3;
 arWorldRoot.add( mesh );
 
 onRenderFcts.push(function(){
