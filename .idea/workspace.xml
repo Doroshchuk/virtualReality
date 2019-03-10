@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70360150-4e4a-4fa4-97cc-8d86c2425698" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/data/pattern-customMarker.patt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/customMarker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/marker.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SievertsSurface.js" beforeDir="false" afterPath="$PROJECT_DIR$/SievertsSurface.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SievertsSurface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-886">
-              <caret line="98" column="88" selection-start-line="98" selection-start-column="63" selection-end-line="98" selection-end-column="88" />
+            <state relative-caret-position="49">
+              <caret line="153" column="6" lean-forward="true" selection-start-line="153" selection-start-column="6" selection-end-line="153" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -137,7 +137,7 @@
               <item name="SievertsSurfaceVR" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="SievertsSurfaceVR" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="data" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -150,7 +150,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552254735614" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552255329344" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GraphicVisualization/SievertsSurface" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -160,6 +160,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dasha\University\SecondSemester\VR\SievertsSurfaceVR\data\images" />
       <recent name="C:\Dasha\University\SecondSemester\VR\SievertsSurfaceVR\data\data" />
       <recent name="C:\Dasha\University\SecondSemester\VR\SievertsSurfaceVR" />
       <recent name="C:\Dasha\University\SecondSemester\VR\SievertsSurfaceVR\build" />
@@ -189,12 +190,12 @@
       <updated>1552131123824</updated>
       <workItem from="1552131128451" duration="6255000" />
       <workItem from="1552216565790" duration="2029000" />
-      <workItem from="1552254310606" duration="414000" />
+      <workItem from="1552254310606" duration="1003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8698000" />
+    <option name="totallyTimeSpent" value="9287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -284,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SievertsSurface.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-886">
-          <caret line="98" column="88" selection-start-line="98" selection-start-column="63" selection-end-line="98" selection-end-column="88" />
+        <state relative-caret-position="49">
+          <caret line="153" column="6" lean-forward="true" selection-start-line="153" selection-start-column="6" selection-end-line="153" selection-end-column="6" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
