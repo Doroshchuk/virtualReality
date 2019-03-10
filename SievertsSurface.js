@@ -133,7 +133,6 @@ var material	= new THREE.MeshNormalMaterial();
 var mesh	= new THREE.Mesh( geometry, material );
 mesh.position.y	= 0.5;
 mesh.position.x	= -0.5;
-mesh.position.z	= -0.5;
 arWorldRoot.add( mesh );
 
 onRenderFcts.push(function(){
