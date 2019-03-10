@@ -132,7 +132,7 @@ var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 40, 40 );
 var material	= new THREE.MeshNormalMaterial();
 var mesh	= new THREE.Mesh( geometry, material );
 mesh.position.y	= 0.5;
-// mesh.position.x	= 3;
+mesh.position.x	= 3;
 arWorldRoot.add( mesh );
 
 onRenderFcts.push(function(){
@@ -176,6 +176,6 @@ function sievertsDrawing(u, v) {
     var x = r * Math.cos(phi);
     var y = r * Math.sin(phi);
     var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-    const scale = 0.2;
+    const scale = 0.5;
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
