@@ -128,11 +128,11 @@ var arWorldRoot = smoothedRoot;
 // mesh.position.y	= geometry.parameters.height/2;
 // arWorldRoot.add( mesh );
 
-var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 40, 40 );
+var geometry	= new THREE.ParametricGeometry( sievertsDrawing, 60, 50 );
 var material	= new THREE.MeshNormalMaterial();
 var mesh	= new THREE.Mesh( geometry, material );
 mesh.position.y	= 0.5;
-mesh.position.x	= 3;
+mesh.position.x	= 0.5;
 arWorldRoot.add( mesh );
 
 onRenderFcts.push(function(){
