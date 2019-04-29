@@ -40,10 +40,9 @@ class Surface {
     }
 }
 
-var degtorad = Math.PI / 180;
-
 function getRotationMatrix( alpha, beta, gamma ) {
-
+	
+	var degtorad = Math.PI / 180;
     var _x = beta  ? beta  * degtorad : 0; // beta value
     var _y = gamma ? gamma * degtorad : 0; // gamma value
     var _z = alpha ? alpha * degtorad : 0; // alpha value
@@ -99,13 +98,13 @@ function sievertsDrawing(u, v) {
     var x = r * Math.cos(phi);
     var y = r * Math.sin(phi);
     var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-    const scale = 100;
+    const scale = 10;
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
 
 window.addEventListener("deviceorientation", function(event) {
     // process event.alpha, event.beta and event.gamma
-    const m = getRotationMatrix(event.alpha * 10, event.beta * 10, event.gamma * 10);
+    const m = getRotationMatrix(event.alpha, event.beta, event.gamma);
     console.log(m);
     const sievertsSurface = new Surface();
     sievertsSurface.init(sievertsDrawing, 1, m);
