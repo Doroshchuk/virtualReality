@@ -18,9 +18,9 @@ class Surface {
         this.meshSurface.position.y = -50;
         this.meshSurface.position.z = -200;
 
-        this.meshSurface.rotation.x = coordinates.beta;
-        this.meshSurface.rotation.y = coordinates.gamma;
-        this.meshSurface.rotation.z = coordinates.alpha;
+        this.meshSurface.rotation.x = coordinates.beta / 1.5;
+        this.meshSurface.rotation.y = coordinates.gamma / 1.5;
+        this.meshSurface.rotation.z = coordinates.alpha / 1.5;
         console.log(JSON.parse(JSON.stringify(this.meshSurface)));
         // document.getElementById('matrix').innerText = matrix.elements;
         // this.meshSurface.applyMatrix(matrix);
