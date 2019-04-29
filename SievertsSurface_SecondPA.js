@@ -18,9 +18,9 @@ class Surface {
         this.meshSurface.position.y = -50;
         this.meshSurface.position.z = -300;
 
-        this.meshSurface.rotation.x = coordinates.alpha;
-        this.meshSurface.rotation.y = coordinates.beta;
-        this.meshSurface.rotation.z = coordinates.gamma;
+        this.meshSurface.rotation.x = coordinates.alpha / 100;
+        this.meshSurface.rotation.y = coordinates.beta / 100;
+        this.meshSurface.rotation.z = coordinates.gamma / 100;
         console.log(JSON.parse(JSON.stringify(this.meshSurface)));
         // document.getElementById('matrix').innerText = matrix.elements;
         // this.meshSurface.applyMatrix(matrix);
@@ -122,21 +122,13 @@ function sievertsDrawing(u, v) {
 }
 
 window.addEventListener("deviceorientation", function(event) {
-    // process event.alpha, event.beta and event.gamma
-    function animate() {
-	    const coordinates = event.detail ? event.detail : event;
-	    const s = 10;
-	    const m = getRotationMatrix(1, 1, coordinates.gamma * s);
-	    console.log(m.elements);
-	    const debugString = coordinates.alpha + ' ' + coordinates.beta + ' ' + coordinates.gamma;
-	    console.log(coordinates.alpha, coordinates.beta, coordinates.gamma);
-	    document.getElementById('deviceorientation').innerText = debugString;
-	    const sievertsSurface = new Surface();
-	    sievertsSurface.init(sievertsDrawing, 1, coordinates);
-	    sievertsSurface.render();
-	    // requestAnimationFrame(animate);
-	}
-	animate();
+    const coordinates = event.detail ? event.detail : event;
+    const s = 10;
+    const m = getRotationMatrix(1, 1, coordinates.gamma * s);
+    document.getElementById('deviceorientation').innerText = coordinates.alpha + ' ' + coordinates.beta + ' ' + coordinates.gamma;
+    const sievertsSurface = new Surface();
+    sievertsSurface.init(sievertsDrawing, 1, coordinates);
+    sievertsSurface.render();
 }, true);
 
 
