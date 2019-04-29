@@ -132,10 +132,10 @@ window.addEventListener("deviceorientation", function(event) {
 }, true);
 
 
-setInterval(() => {
+// setInterval(() => {
 // Create the event
-var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});
+// var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});
 
 // // Dispatch/Trigger/Fire the event
-window.dispatchEvent(event);	
-}, 2000);
+// window.dispatchEvent(event);	
+// }, 2000);
