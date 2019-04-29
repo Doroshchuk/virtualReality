@@ -4,7 +4,7 @@ class Surface {
         this.animationStep = animationStep;
     }
 
-    init(drawingSurfaceFun, startZ = 1, matrix) {
+    init(drawingSurfaceFun, startZ = 1, coordinates) {
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 300, 1000);
         this.camera.position.z = startZ;
@@ -14,16 +14,18 @@ class Surface {
         var materialSurface	= new THREE.MeshNormalMaterial();
 
         this.meshSurface = new THREE.Mesh(geometrySurface, materialSurface);
-        // this.meshSurface.position.x = 0;
-        // this.meshSurface.position.y = -50;
-        // this.meshSurface.position.z = -300;
+        this.meshSurface.position.x = 0;
+        this.meshSurface.position.y = -50;
+        this.meshSurface.position.z = -300;
 
-        // this.meshSurface.rotation.x = 1.05;
-        // this.meshSurface.rotation.y = 1.05;
-        // this.meshSurface.rotation.z = 5.21;
-        console.log(matrix.elements);
-        document.getElementById('matrix').innerText = matrix.elements;
-        this.meshSurface.applyMatrix(matrix);
+        this.meshSurface.rotation.x = coordinates.alpha;
+        this.meshSurface.rotation.y = coordinates.beta;
+        this.meshSurface.rotation.z = coordinates.gamma;
+        console.log(JSON.parse(JSON.stringify(this.meshSurface)));
+        // document.getElementById('matrix').innerText = matrix.elements;
+        // this.meshSurface.applyMatrix(matrix);
+        // applyMatrix(this.meshSurface, matrix);
+        console.log(JSON.parse(JSON.stringify(this.meshSurface)));
 
         this.scene.add(this.meshSurface);
         this.renderer = new THREE.WebGLRenderer({
@@ -38,6 +40,14 @@ class Surface {
     render() {
         this.renderer.render(this.scene, this.camera);
     }
+}
+
+function applyMatrix(surface, matrix4) {
+	for (key in surface.matrix.elements) {
+            if (surface.matrix.elements.hasOwnProperty(key)) {
+                surface.matrix.elements[key] = matrix4.elements[key];
+            }
+        }
 }
 
 function getRotationMatrix( alpha, beta, gamma ) {
@@ -78,6 +88,15 @@ function getRotationMatrix( alpha, beta, gamma ) {
         0,      0,      0,      1,
     );
 
+    // matrix4D.set(
+        // 1,    1,    1,    1,
+        // 0,    1,    0,    0,
+        // 0,    1,    1,    0,
+        // 0,    0,    0,    1,
+    // );
+
+    // [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+
     // return [
     //     m11,    m12,    m13,
     //     m21,    m22,    m23,
@@ -98,16 +117,33 @@ function sievertsDrawing(u, v) {
     var x = r * Math.cos(phi);
     var y = r * Math.sin(phi);
     var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-    const scale = 10;
+    const scale = 100;
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
 
 window.addEventListener("deviceorientation", function(event) {
     // process event.alpha, event.beta and event.gamma
-    const m = getRotationMatrix(event.alpha, event.beta, event.gamma);
-    console.log(m);
-    const sievertsSurface = new Surface();
-    sievertsSurface.init(sievertsDrawing, 1, m);
-    sievertsSurface.render();
+    function animate() {
+	    const coordinates = event.detail ? event.detail : event;
+	    const s = 10;
+	    const m = getRotationMatrix(1, 1, coordinates.gamma * s);
+	    console.log(m.elements);
+	    const debugString = coordinates.alpha + ' ' + coordinates.beta + ' ' + coordinates.gamma;
+	    console.log(coordinates.alpha, coordinates.beta, coordinates.gamma);
+	    document.getElementById('deviceorientation').innerText = debugString;
+	    const sievertsSurface = new Surface();
+	    sievertsSurface.init(sievertsDrawing, 1, coordinates);
+	    sievertsSurface.render();
+	    // requestAnimationFrame(animate);
+	}
+	animate();
 }, true);
 
+
+// setInterval(() => {
+// Create the event
+// var event = new CustomEvent("deviceorientation", {detail: { alpha: Math.random(), beta: Math.random(), gamma: Math.random() }});
+
+// // Dispatch/Trigger/Fire the event
+// window.dispatchEvent(event);	
+// }, 2000);
