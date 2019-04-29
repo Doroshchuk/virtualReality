@@ -22,7 +22,8 @@ class Surface {
         // this.meshSurface.rotation.y = 1.05;
         // this.meshSurface.rotation.z = 5.21;
         console.log(matrix);
-        this.meshSurface.setRotationFromMatrix({elements: [1, 1, 1, 1, 1, 1, 1, 1, 1]});
+        document.getElementById('matrix').innerText = matrix;
+        this.meshSurface.setRotationFromMatrix({elements: matrix});
 
         this.scene.add(this.meshSurface);
         this.renderer = new THREE.WebGLRenderer({
