@@ -105,7 +105,7 @@ function sievertsDrawing(u, v) {
 
 window.addEventListener("deviceorientation", function(event) {
     // process event.alpha, event.beta and event.gamma
-    const m = getRotationMatrix(event.alpha, event.beta, event.gamma);
+    const m = getRotationMatrix(event.alpha * 10, event.beta * 10, event.gamma * 10);
     console.log(m);
     const sievertsSurface = new Surface();
     sievertsSurface.init(sievertsDrawing, 1, m);
