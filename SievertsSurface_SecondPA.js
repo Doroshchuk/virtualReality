@@ -18,9 +18,9 @@ class Surface {
         this.meshSurface.position.y = -50;
         this.meshSurface.position.z = -300;
 
-        this.meshSurface.rotation.x = coordinates.alpha / 10;
-        this.meshSurface.rotation.y = coordinates.beta / 10;
-        this.meshSurface.rotation.z = coordinates.gamma / 10;
+        this.meshSurface.rotation.x = coordinates.beta / 10;
+        this.meshSurface.rotation.y = coordinates.gamma / 10;
+        this.meshSurface.rotation.z = coordinates.alpha / 10;
         console.log(JSON.parse(JSON.stringify(this.meshSurface)));
         // document.getElementById('matrix').innerText = matrix.elements;
         // this.meshSurface.applyMatrix(matrix);
@@ -132,10 +132,4 @@ window.addEventListener("deviceorientation", function(event) {
 }, true);
 
 
-// setInterval(() => {
-// Create the event
-// var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});
-
-// // Dispatch/Trigger/Fire the event
-// window.dispatchEvent(event);	
-// }, 2000);
+setInterval(() => {var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});window.dispatchEvent(event);	}, 2000);
