@@ -6,7 +6,7 @@ class Surface {
 
     init(drawingSurfaceFun, startZ = 1, coordinates) {
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 300, 1000);
+        this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 200, 700);
         this.camera.position.z = startZ;
         this.scene.add(this.camera);
         const geometrySurface = new THREE.ParametricBufferGeometry( drawingSurfaceFun, this.quality, this.quality );
@@ -117,7 +117,7 @@ function sievertsDrawing(u, v) {
     var x = r * Math.cos(phi);
     var y = r * Math.sin(phi);
     var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-    const scale = 80;
+    const scale = 50;
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
 
