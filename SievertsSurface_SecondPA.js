@@ -14,13 +14,13 @@ class Surface {
         var materialSurface	= new THREE.MeshNormalMaterial();
 
         this.meshSurface = new THREE.Mesh(geometrySurface, materialSurface);
-        this.meshSurface.position.x = 0;
+        this.meshSurface.position.x = -40;
         this.meshSurface.position.y = -50;
         this.meshSurface.position.z = -300;
 
-        this.meshSurface.rotation.x = coordinates.alpha / 100;
-        this.meshSurface.rotation.y = coordinates.beta / 100;
-        this.meshSurface.rotation.z = coordinates.gamma / 100;
+        this.meshSurface.rotation.x = coordinates.alpha / 10;
+        this.meshSurface.rotation.y = coordinates.beta / 10;
+        this.meshSurface.rotation.z = coordinates.gamma / 10;
         console.log(JSON.parse(JSON.stringify(this.meshSurface)));
         // document.getElementById('matrix').innerText = matrix.elements;
         // this.meshSurface.applyMatrix(matrix);
@@ -117,7 +117,7 @@ function sievertsDrawing(u, v) {
     var x = r * Math.cos(phi);
     var y = r * Math.sin(phi);
     var z = (Math.log(Math.tan(v / 2)) + a_ * (c + 1) * Math.cos(v)) / Math.sqrt(c);
-    const scale = 100;
+    const scale = 40;
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
 
@@ -132,10 +132,10 @@ window.addEventListener("deviceorientation", function(event) {
 }, true);
 
 
-// setInterval(() => {
+setInterval(() => {
 // Create the event
-// var event = new CustomEvent("deviceorientation", {detail: { alpha: Math.random(), beta: Math.random(), gamma: Math.random() }});
+var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});
 
 // // Dispatch/Trigger/Fire the event
-// window.dispatchEvent(event);	
-// }, 2000);
+window.dispatchEvent(event);	
+}, 2000);
