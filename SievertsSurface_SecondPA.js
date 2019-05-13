@@ -4,28 +4,27 @@ class Surface {
         this.animationStep = animationStep;
     }
 
-    init(drawingSurfaceFun, startZ = 1, coordinates) {
+    init(drawingSurfaceFun, startZ = 1, rotaionXYZ) {
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 200, 700);
+        this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 100, 1000);
         this.camera.position.z = startZ;
         this.scene.add(this.camera);
-        const geometrySurface = new THREE.ParametricBufferGeometry( drawingSurfaceFun, this.quality, this.quality );
+        const geometrySurface = new THREE.ParametricBufferGeometry(drawingSurfaceFun, this.quality, this.quality);
 
-        var materialSurface	= new THREE.MeshNormalMaterial();
+        var materialSurface = new THREE.MeshNormalMaterial();
 
         this.meshSurface = new THREE.Mesh(geometrySurface, materialSurface);
         this.meshSurface.position.x = 0;
         this.meshSurface.position.y = -50;
         this.meshSurface.position.z = -200;
 
-        this.meshSurface.rotation.x = coordinates.beta;
-        this.meshSurface.rotation.y = coordinates.gamma;
-        this.meshSurface.rotation.z = coordinates.alpha;
-        console.log(JSON.parse(JSON.stringify(this.meshSurface)));
-        // document.getElementById('matrix').innerText = matrix.elements;
-        // this.meshSurface.applyMatrix(matrix);
-        // applyMatrix(this.meshSurface, matrix);
-        console.log(JSON.parse(JSON.stringify(this.meshSurface)));
+        this.meshSurface.rotation.x = rotaionXYZ.x - 1;
+        this.meshSurface.rotation.y = rotaionXYZ.y - 2;
+        this.meshSurface.rotation.z = rotaionXYZ.z + 2;
+        document.getElementById('deviceorientation').innerText =
+            ' x: ' + this.meshSurface.rotation.x.toFixed(3) +
+            ' y: ' + this.meshSurface.rotation.y.toFixed(3) +
+            ' z: ' + this.meshSurface.rotation.z.toFixed(3);
 
         this.scene.add(this.meshSurface);
         this.renderer = new THREE.WebGLRenderer({
@@ -42,67 +41,38 @@ class Surface {
     }
 }
 
-function applyMatrix(surface, matrix4) {
-	for (key in surface.matrix.elements) {
-            if (surface.matrix.elements.hasOwnProperty(key)) {
-                surface.matrix.elements[key] = matrix4.elements[key];
-            }
-        }
-}
+function getRotationMatrix(orientation) {
 
-function getRotationMatrix( alpha, beta, gamma ) {
-	
-	var degtorad = Math.PI / 180;
-    var _x = beta  ? beta  * degtorad : 0; // beta value
-    var _y = gamma ? gamma * degtorad : 0; // gamma value
-    var _z = alpha ? alpha * degtorad : 0; // alpha value
+    var degtorad = Math.PI / 180;
+    var _x = orientation.beta ? orientation.beta * degtorad : 0; // beta value
+    var _y = orientation.gamma ? orientation.gamma * degtorad : 0; // gamma value
+    var _z = orientation.alpha ? orientation.alpha * degtorad : 0; // alpha value
 
-    var cX = Math.cos( _x );
-    var cY = Math.cos( _y );
-    var cZ = Math.cos( _z );
-    var sX = Math.sin( _x );
-    var sY = Math.sin( _y );
-    var sZ = Math.sin( _z );
+    var cX = Math.cos(_x);
+    var cY = Math.cos(_y);
+    var cZ = Math.cos(_z);
+    var sX = Math.sin(_x);
+    var sY = Math.sin(_y);
+    var sZ = Math.sin(_z);
 
-    //
     // ZXY rotation matrix construction.
-    //
-
     var m11 = cZ * cY - sZ * sX * sY;
-    var m12 = - cX * sZ;
+    var m12 = -cX * sZ;
     var m13 = cY * sZ * sX + cZ * sY;
 
     var m21 = cY * sZ + cZ * sX * sY;
     var m22 = cZ * cX;
     var m23 = sZ * sY - cZ * cY * sX;
 
-    var m31 = - cX * sY;
+    var m31 = -cX * sY;
     var m32 = sX;
     var m33 = cX * cY;
 
-    var matrix4D = new THREE.Matrix4();
-    matrix4D.set(
-        m11,    m12,    m13,    0,
-        m21,    m22,    m23,    0,
-        m31,    m32,    m33,    0,
-        0,      0,      0,      1,
-    );
-
-    // matrix4D.set(
-        // 1,    1,    1,    1,
-        // 0,    1,    0,    0,
-        // 0,    1,    1,    0,
-        // 0,    0,    0,    1,
-    // );
-
-    // [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
-
-    // return [
-    //     m11,    m12,    m13,
-    //     m21,    m22,    m23,
-    //     m31,    m32,    m33,
-    // ];
-    return matrix4D;
+    return [
+        m11, m12, m13,
+        m21, m22, m23,
+        m31, m32, m33,
+    ];
 
 };
 
@@ -121,15 +91,26 @@ function sievertsDrawing(u, v) {
     return new THREE.Vector3(x * scale, y * scale, z * scale);
 }
 
-window.addEventListener("deviceorientation", function(event) {
-    const coordinates = event.detail ? event.detail : event;
-    const s = 10;
-    const m = getRotationMatrix(1, 1, coordinates.gamma * s);
-    document.getElementById('deviceorientation').innerText = coordinates.alpha + ' ' + coordinates.beta + ' ' + coordinates.gamma;
+function renderSurface(orientation) {
     const sievertsSurface = new Surface();
-    sievertsSurface.init(sievertsDrawing, 1, coordinates);
+    const matrix = getRotationMatrix(orientation);
+    const rotationXYZ = matrixToCoordinates(matrix);
+    sievertsSurface.init(sievertsDrawing, 1, rotationXYZ);
     sievertsSurface.render();
+}
+
+function matrixToCoordinates(matrix3d) {
+    return {
+        y: matrix3d[0] + matrix3d[1] + matrix3d[2],
+        z: matrix3d[3] + matrix3d[4] + matrix3d[5],
+        x: matrix3d[6] + matrix3d[7] + matrix3d[8],
+    }
+}
+
+// this is a fallback where deviceorientation is not supported
+const initialRotation = {alpha: 35, beta: 96, gamma: 55};
+renderSurface(initialRotation);
+
+window.addEventListener("deviceorientation", function (orientation) {
+    renderSurface(orientation);
 }, true);
-
-
-//setInterval(() => {var event = new CustomEvent("deviceorientation", {detail: { alpha: 35, beta: 96, gamma: 56 }});window.dispatchEvent(event);	}, 2000);
